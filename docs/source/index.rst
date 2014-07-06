@@ -6,6 +6,8 @@ Reference Guide
    :maxdepth: 2
 
    core/index
+   services/index
+   examples/index
 
 Indices and tables
 ==================
