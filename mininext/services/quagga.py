@@ -32,9 +32,9 @@ class QuaggaService(Service):
         """Verifies that a specified node is configured to support Quagga
 
         Overrides the :class:`.Service` default verification method to conduct
-            checks specific to Quagga. This includes checking that the node
-            has a private log space, a private run space, and is in a PID
-            namespace
+        checks specific to Quagga. This includes checking that the node
+        has a private log space, a private run space, and is in a PID
+        namespace
 
         Args:
             node: Node to inspect
