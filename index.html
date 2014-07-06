@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="MiniNExT | Mininet ExTended : Making it easier to build complex networks in Mininet" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>MiniNExT | Mininet ExTended</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/USC-NSL/miniNExT">View on GitHub</a>
+
+          <h1 id="project_title">MiniNExT | Mininet ExTended</h1>
+          <h2 id="project_tagline">Making it easier to build complex networks in Mininet</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/USC-NSL/miniNExT/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/USC-NSL/miniNExT/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>MiniNExT is an extension layer that makes it easier to build complex networks in <a href="http://www.mininet.org">Mininet</a>.</p>
+
+<p>MiniNExT includes building blocks that are used in many experimental networks, including:</p>
+
+<ul>
+<li>Routing engines (Quagga and BIRD)</li>
+<li>Servers (BIND and Apache)</li>
+<li>Connectivity components (OpenVPN, etc.)</li>
+<li>NAT and Network Management components (DHCP, etc.)</li>
+</ul><p>In addition, MiniNExT hosts / containers can provide greater isolation, including:</p>
+
+<ul>
+<li>PID namespaces - isolates each container's processes, improving application support</li>
+<li>UTS namespaces - each host can have its own hostname, simplifying management</li>
+<li>Improved mount namespaces - easy to provide each host with a custom filesystem</li>
+<li>Log and runtime isolation - each host can have its own /var/log and /run with one line</li>
+</ul><p>We also make it easier to express common configurations with:</p>
+
+<ul>
+<li>Service helpers - makes it easier to run and manage the services in your hosts</li>
+<li>Network helpers - makes it easier to configure loopback interfaces and NAT networks</li>
+<li>Mount management - makes it easier to provide hosts with individual configurations</li>
+</ul><p>We hope to upstream some of these extensions (such as support for PID and UTS namespaces, easier mount management, etc.) into mainline Mininet.</p>
+
+<h2>
+<a name="project-details" class="anchor" href="#project-details"><span class="octicon octicon-link"></span></a>Project Details</h2>
+
+<p>MiniNExT was developed by Brandon Schlinker at <a href="http://www.usc.edu">The University of Southern California</a> in collaboration with Kyriakos Zarifis (USC), Italo Cunha (UFMG), Nick Feamster (GaTech), Ethan Katz-Bassett (USC), and Minlan Yu (USC).</p>
+
+<p>MiniNExT is part of the PEERING project at USC, which combines Transit Portal and MiniNExT. Combined, these tools enable researchers to build realistic AS topologies that can exchange BGP routes and traffic with <em>real</em> ISPs around the world. The PEERING tools played a role in evaluating <a href="http://noise-lab.net/projects/software-defined-networking/sdx/">Software Defined Internet Exchanges</a> by making it possible to build a virtual IXP fabric composed of <em>real</em> ISP peers.</p>
+
+<p>For problems with the code base, please use the GitHub issue tracker. All other queries, please email <a href="mailto:bschlink@usc.edu">bschlink@usc.edu</a></p>
+
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<h3>
+<a name="installing-mininet" class="anchor" href="#installing-mininet"><span class="octicon octicon-link"></span></a>Installing Mininet</h3>
+
+<p>MiniNExT depends on the Mininet software package, and thus you must have Mininet installed.</p>
+
+<p>You can check if you already have Mininet installed and its version by executing <code>mn --version</code></p>
+
+<p>If Mininet is not installed, you can install it on Debian/Ubuntu by executing:</p>
+
+<pre><code>$ sudo apt-get install mininet
+</code></pre>
+
+<p>OR, Mininet can be installed from source by following the instructions on the <a href="http://www.mininet.org">Mininet website</a></p>
+
+<h3>
+<a name="downloading-mininext" class="anchor" href="#downloading-mininext"><span class="octicon octicon-link"></span></a>Downloading MiniNExT</h3>
+
+<p>MiniNExT sources are available <a href="http://mininext.uscnsl.net">here</a>. The easiest option is to download a <code>.zip</code> or <code>.tar.gz</code> source archive. Download and extract the archive to a location in your home directory.</p>
+
+<p>You may also prefer to use <code>git</code> to <code>clone</code> the MiniNExT repository to make upgrading easier.</p>
+
+<h3>
+<a name="installing-mininext-dependencies" class="anchor" href="#installing-mininext-dependencies"><span class="octicon octicon-link"></span></a>Installing MiniNExT Dependencies</h3>
+
+<p>MiniNExT depends on a packages that may not be installed by default with Mininet.</p>
+
+<p>To list these dependencies, execute the following in the directoy where you <em>extracted</em> MiniNExT:</p>
+
+<pre><code>$ make deps
+</code></pre>
+
+<p>These dependencies can be installed on Debian/Ubuntu by executing:</p>
+
+<pre><code>$ sudo apt-get install `make deps`
+</code></pre>
+
+<h3>
+<a name="installing-mininext" class="anchor" href="#installing-mininext"><span class="octicon octicon-link"></span></a>Installing MiniNExT</h3>
+
+<p>To install MiniNExT, execute the following in the directoy where you <em>extracted</em> MiniNExT:</p>
+
+<pre><code>$ sudo make install
+</code></pre>
+
+<h3>
+<a name="uninstalling-mininext" class="anchor" href="#uninstalling-mininext"><span class="octicon octicon-link"></span></a>Uninstalling MiniNExT</h3>
+
+<p>To uninstall MiniNExT, execute the following in the directoy where you <em>extracted</em> MiniNExT:</p>
+
+<pre><code>$ sudo make uninstall
+</code></pre>
+
+<p>Note that the <code>pip</code> package must be installed for this to work.</p>
+
+<h3>
+<a name="developer-installation" class="anchor" href="#developer-installation"><span class="octicon octicon-link"></span></a>Developer Installation</h3>
+
+<p>If you're extending or debugging MiniNExT, you likely do <em>not</em> want to install to the system's Python library. </p>
+
+<p>Instead, you can run the following command to install MiniNExT in developer mode:</p>
+
+<pre><code>$ sudo make develop
+</code></pre>
+
+<p>This triggers the <a href="https://pythonhosted.org/setuptools/setuptools.html#development-mode">development mode</a> that is provided by the <code>setuptools</code> package, which then creates a link instead of performing a complete installation. However, note that the <code>mxexec</code> and supporting help files are still installed into their respective system paths.</p>
+
+<p>To remove, run:</p>
+
+<pre><code>$ sudo make undevelop
+</code></pre>
+
+<p><strong>Note:</strong> MiniNExT no longer <em>forks</em> Mininet<br>
+Previously MiniNExT functionality was built by forking and modifying the original Mininet source code. However, this created conflicts with existing Mininet installations and made it difficult to merge in upstream changes. MiniNExT has been redesigned to <em>extend</em> Mininet, and does <em>not</em> impact default Mininet execution.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">MiniNExT | Mininet ExTended maintained by <a href="https://github.com/USC-NSL">USC-NSL</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-52562769-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
