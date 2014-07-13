@@ -1,5 +1,5 @@
 ====================
-quagga.py
+Quagga
 ====================
 
 .. automodule:: mininext.services.quagga

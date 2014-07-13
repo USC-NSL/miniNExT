@@ -23,6 +23,17 @@ class Node(BaseNode):
 
     def __init__(self, name, inMountNamespace=False, inPIDNamespace=False,
                  inUTSNamespace=False, **params):
+        """Initializes a QuaggaService instance with a set of global parameters
+
+        Args:
+            name (str): name of the node / container
+            inNamespace (bool): in private network namespace
+            inMountNamespace (bool): in private mount namespace
+            inPIDNamespace (bool): in private PID namespace
+            inUTSNamespace(bool):in private UTS namespace
+            params: additional args passed to Mininet and stored in Node.params
+        """
+
         """name: name of node
            inNamespace: in network namespace?
            inMountNamespace: has private mountspace?

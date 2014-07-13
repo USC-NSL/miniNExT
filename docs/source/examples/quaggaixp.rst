@@ -1,5 +1,5 @@
 ====================
-quagga-ixp
+Emulated IXP with Quagga Routers
 ====================
 
 .. automodule:: quaggaixp.start
