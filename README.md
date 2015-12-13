@@ -3,6 +3,8 @@ miniNExT
 
 MiniNExT (_Mininet ExTended_) is an extension layer that makes it easier to build complex networks in [Mininet](http://www.mininet.org).
 
+**MiniNExT does not currently support the latest version of Mininet -- you must use version 2.1.0**
+
 MiniNExT includes building blocks that are used in many experimental networks, including:
 
 * Routing engines (Quagga and BIRD)
@@ -39,14 +41,26 @@ For problems with the code base, please use the GitHub issue tracker. All other 
 
 MiniNExT depends on the Mininet software package, and thus you must have Mininet installed.
 
+**MiniNExT does not currently support the latest version of Mininet -- you must use version 2.1.0**
+
 You can check if you already have Mininet installed and its version by executing `mn --version`
 
-If Mininet is not installed, you can install it on Debian/Ubuntu by executing:
+You can install Mininet version 2.1.0 on Ubuntu by executing:
 ```
-$ sudo apt-get install mininet
+$ sudo apt-get install mininet=2.1.0-0ubuntu1
 ```
 
-OR, Mininet can be installed from source by following the instructions on the [Mininet website](http://www.mininet.org)
+If the above fails, you may need to uninstall your current version of Mininet:
+```
+$ sudo apt-get purge mininet
+```
+
+You can also check if your package manager has Mininet version 2.1.0:
+```
+$ sudo apt-cache madison ^mininet
+```
+
+Alternatively, Mininet can be installed from source by following the instructions on the [Mininet website](http://www.mininet.org)
 
 ### Downloading MiniNExT
 
